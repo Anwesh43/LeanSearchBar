@@ -42,4 +42,4 @@
 ```
 ## Screencast
 
-<img src="https://github.com/Anwesh43/LeanSearchBar/blob/master/screencast/leansearchbar.mp4" alt="Demo of SearchBar" width="400" height="700"/>
+<img src="https://github.com/Anwesh43/LeanSearchBar/blob/master/screencast/leansearchbar.gif" alt="Demo of SearchBar" width="400" height="700"/>
