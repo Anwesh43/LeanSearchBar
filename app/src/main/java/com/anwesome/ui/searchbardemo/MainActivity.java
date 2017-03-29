@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         DataSource dataSource = new DataSource();
         String res = "";
         for(String message:AppConstants.messages) {
-            res+=message+"\n";
+            res+=message+"\n \n";
             dataSource.addToData(message);
         }
         resultText.setText(res);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onMatchResults(List<String> results) {
                 String res = "";
                 for(String result:results) {
-                    res += result+"\n";
+                    res += result+"\n \n";
                 }
                 resultText.setText(res);
             }
