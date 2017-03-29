@@ -22,7 +22,7 @@ public class SearchIcon extends View {
         initAnimator(w);
     }
     public void initAnimator(int w) {
-        translateAnimator = new SearchBarAnimator(getX(),w);
+        translateAnimator = new SearchBarAnimator(w/2,w);
         rotateAnimator = new SearchBarAnimator(-45,45);
         translateAnimator.setUpdateAnimateAdapter(new AnimatorAdapter(){
             public void onAnimationUpdate(ValueAnimator animator) {
@@ -33,13 +33,11 @@ public class SearchIcon extends View {
         rotateAnimator.setUpdateAnimateAdapter(new AnimatorAdapter(){
             public void onAnimationUpdate(ValueAnimator animator) {
                 SearchIcon.this.setRotation((float)animator.getAnimatedValue());
-                animating = true;
             }
         });
         AnimatorAdapter translateEndAnimateAdapter = new AnimatorAdapter(){
             public void onAnimationEnd(Animator animator) {
                 opened = !opened;
-                animating = false;
                 rotateAnimator.start();
             }
         };
@@ -51,19 +49,19 @@ public class SearchIcon extends View {
         translateAnimator.setEndAnimateAdapter(translateEndAnimateAdapter);
         translateAnimator.setReverseEndAnimateAdapter(translateEndAnimateAdapter);
         rotateAnimator.setEndAnimateAdapter(rotateEndAnimateAdapter);
-        translateAnimator.setReverseEndAnimateAdapter(rotateEndAnimateAdapter);
+        rotateAnimator.setReverseEndAnimateAdapter(rotateEndAnimateAdapter);
     }
     public void onDraw(Canvas canvas) {
-        int w = canvas.getWidth(),h = canvas.getHeight();
+        int w = canvas.getWidth(),h = (canvas.getHeight())/2;
         canvas.drawColor(Color.parseColor("#00FFFFFF"));
         paint.setColor(Color.parseColor("#EEEEEE"));
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(canvas.getWidth()/20);
+        paint.setStrokeWidth(canvas.getWidth()/30);
         canvas.drawLine(w/2,h,w/2,h/2,paint);
-        canvas.drawCircle(w/2,h/2-h/4,h/4,paint);
+        canvas.drawCircle(w/2,h/2-h/5,h/5,paint);
     }
     public boolean onTouchEvent(MotionEvent event) {
-        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+        if(event.getAction() == MotionEvent.ACTION_DOWN && !animating) {
             if(onClickListener!=null) {
                 onClickListener.onClick(this);
             }
