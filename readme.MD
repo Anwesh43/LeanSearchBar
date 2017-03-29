@@ -2,7 +2,7 @@
 
 ## Android module to create search bar in your app to filter out strings.
 
-## Usage in Activity file 
+## Usage in Activity file
 
 ### Creating SearchBar
 
@@ -40,3 +40,6 @@
 ```
     searchBar.show(dataSource,listener);
 ```
+## Screencast
+
+<img src="https://github.com/Anwesh43/LeanSearchBar/blob/master/screencast/leansearchbar.mp4" alt="Demo of SearchBar" width="400" height="700"/>
