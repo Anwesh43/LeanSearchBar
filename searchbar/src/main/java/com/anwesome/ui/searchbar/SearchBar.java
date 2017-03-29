@@ -26,6 +26,9 @@ public class SearchBar {
             relativeLayout = new RelativeLayout(activity);
             Point dimension = DimensionsUtil.getDimensions(activity);
             int w = dimension.x,h = dimension.y;
+            if(dimension.x>dimension.y) {
+                h = h*2;
+            }
             relativeLayout.setBackgroundColor(barColor);
             activity.addContentView(relativeLayout,new ViewGroup.LayoutParams(w,h/10));
             searchIcon = new SearchIcon(activity,4*w/5);
@@ -35,6 +38,9 @@ public class SearchBar {
             searchIcon.setRotation(-45);
             searchIcon.setX(5*w/12);
             searchIcon.setY(h/10-w/8);
+            if(dimension.x>dimension.y) {
+                searchIcon.setY(h/60);
+            }
             searchTextView.setX(w/10);
             searchTextView.setY(h/60);
             searchIcon.setOnClickListener(new View.OnClickListener() {
