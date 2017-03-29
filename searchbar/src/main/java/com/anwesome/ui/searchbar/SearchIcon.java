@@ -60,6 +60,9 @@ public class SearchIcon extends View {
         canvas.drawLine(w/2,h,w/2,h/2,paint);
         canvas.drawCircle(w/2,h/2-h/5,h/5,paint);
     }
+    public void setOnClickListener(OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
     public boolean onTouchEvent(MotionEvent event) {
         if(event.getAction() == MotionEvent.ACTION_DOWN && !animating) {
             if(onClickListener!=null) {
