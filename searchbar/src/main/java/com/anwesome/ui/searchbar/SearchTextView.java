@@ -5,6 +5,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.widget.EditText;
 
 /**
@@ -38,6 +39,12 @@ public class SearchTextView extends EditText{
         if(shouldAnimate) {
             scaleAnimator.start();
         }
+    }
+    public boolean onTouchEvent(MotionEvent event) {
+        if(getScaleX() == 0) {
+            return false;
+        }
+        return super.onTouchEvent(event);
     }
 
 }

@@ -33,7 +33,7 @@ public class SearchBar {
             relativeLayout.addView(searchIcon,new ViewGroup.LayoutParams(w/6,w/6));
             relativeLayout.addView(searchTextView,new ViewGroup.LayoutParams(7*w/10,h/15));
             searchIcon.setRotation(-45);
-            searchIcon.setX(2*w/5);
+            searchIcon.setX(5*w/12);
             searchIcon.setY(h/10-w/8);
             searchTextView.setX(w/10);
             searchTextView.setY(h/60);
