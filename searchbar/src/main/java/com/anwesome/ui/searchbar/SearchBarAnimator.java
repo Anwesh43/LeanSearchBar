@@ -16,14 +16,14 @@ public class SearchBarAnimator {
         reverseAnimator.setDuration(1000);
     }
     public void setUpdateAnimateAdapter(AnimatorAdapter animateAdapter) {
-        animator.addListener(animateAdapter);
+        reverseAnimator.addUpdateListener(animateAdapter);
+        animator.addUpdateListener(animateAdapter);
     }
     public void setEndAnimateAdapter(AnimatorAdapter animateAdapter) {
-        reverseAnimator.addListener(animateAdapter);
+        animator.addListener(animateAdapter);
     }
     public void setReverseEndAnimateAdapter(AnimatorAdapter animatorAdapter) {
-        reverseAnimator.addUpdateListener(animatorAdapter);
-        animator.addUpdateListener(animatorAdapter);
+        reverseAnimator.addListener(animatorAdapter);
     }
     public void start() {
         if(reverse) {
