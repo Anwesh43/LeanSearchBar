@@ -21,7 +21,7 @@ public class SearchBarAnimator {
     public void setEndAnimateAdapter(AnimatorAdapter animateAdapter) {
         reverseAnimator.addListener(animateAdapter);
     }
-    public void setUpdateAnimator(AnimatorAdapter animatorAdapter) {
+    public void setReverseEndAnimateAdapter(AnimatorAdapter animatorAdapter) {
         reverseAnimator.addUpdateListener(animatorAdapter);
         animator.addUpdateListener(animatorAdapter);
     }
